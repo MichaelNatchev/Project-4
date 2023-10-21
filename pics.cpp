@@ -27,21 +27,30 @@ using namespace std;
  * Modifies: cout.
  * Effects:  Prints an opening message.
  */
-void printOpener();
+void printOpener() {
+    cout << "";
+    return;
+}
 
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints a closing message.
  */
-void printCloser();
+void printCloser() {
+    cout << "";
+    return;
+}
 
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints a menu.
  */
-void printMenu();
+void printMenu() {
+    cout << "";
+    return;
+}
 
 /**
  * Requires: ins is in good state.
@@ -50,14 +59,18 @@ void printMenu();
  *           (and appends .txt) until the file is successfully opened.
  *           Returns the name of the file that was opened.
  */
-string openFile(ifstream& ins);
+string openFile(ifstream& ins) {
+    return "todo";
+}
 
 /**
  * Requires: Nothing.
  * Modifies: Nothing.
  * Effects:  Returns str with all of its alphabetical characters lowercased.
  */
-string tolower(string str);
+string tolower(string str) {
+    return "todo";
+}
 
 /**
  * Requires: Nothing.
@@ -77,7 +90,9 @@ string tolower(string str);
  *     Print "[Loaded <filename>]", where <filename> is replaced with 
  *                                  the name of the file.
  */
-void loadFile(Graphics& drawer);
+void loadFile(Graphics& drawer) {
+    return;
+}
 
 /**
  * Requires: Nothing.
@@ -88,10 +103,11 @@ void loadFile(Graphics& drawer);
  *     Write image to file.
  *     Print "[Wrote filename]"
  */
-void writeFile(const Graphics& drawer);
+void writeFile(const Graphics& drawer) {
+    return;
+}
 
-void coolPics()
-{
+void coolPics() {
     Graphics drawer;
     string command;
     printOpener();
@@ -135,11 +151,13 @@ void writeFile(const Graphics& drawer)
 {
     // TODO: implement
     // This will make use of Graphics::writeFile()
+    return;
 }
 
 void loadFile(Graphics& drawer)
 {
     // TODO: implement
+    return;
 }
 
 string tolower(string str)
