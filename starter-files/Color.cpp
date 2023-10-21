@@ -5,10 +5,11 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Mark Zhu, Michael Natchev
+ * markzhu, mnatchev
  *
  * <#Description#>
+ * Testing from Mark's branch
  */
 
 #include "Color.h"

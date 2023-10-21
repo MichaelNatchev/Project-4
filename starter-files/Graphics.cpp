@@ -5,8 +5,8 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * Michael Natchev
- * <#uniqname(s)#>
+ * Mark Zhu, Michael Natchev
+ * markzhu, mnatchev
  *
  * <#Description#>
  */
