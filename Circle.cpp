@@ -8,7 +8,8 @@
  * Michael Natchev, Mark Zhu
  * mnatchev, markzhu
  *
- * <#Description#>
+ * Can you read this?
+ * 
  */
 
 #include "Circle.h"
@@ -18,9 +19,50 @@
 #include <algorithm>
 using namespace std;
 
-// TODO: implement two constructors, setCenter, getCenter, setColor, getColor,
+// TODO: setCenter, getCenter, setColor, getColor,
 //       setRadius, getRadius, read, write.
 
+Circle::Circle() {
+
+}
+
+Circle::Circle(Point pt, int r, Color c) {
+    center = pt;
+    radius = r;
+    color = c;
+}
+
+void Circle::setCenter(Point pt) {
+    center = pt;
+}
+
+Point Circle::getCenter() {
+    return center;
+}
+
+void Circle::setRadius(int r) {
+    radius = r;
+}
+
+int Circle::getRadius() {
+    return radius;
+}
+
+void Circle::setColor(Color c) {
+    color = c;
+}
+
+Color Circle::getColor() {
+    return color;
+}
+
+void Circle::read(istream& ins) {
+
+}
+
+void Circle::write(ostream& outs) {
+
+}
 
 
 // Your code goes above this line.

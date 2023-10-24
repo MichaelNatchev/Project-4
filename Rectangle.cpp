@@ -5,8 +5,8 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Mark Zhu, Michael Natchev
+ * markzhu, mnatchev
  *
  * <#Description#>
  */
@@ -23,7 +23,196 @@ using namespace std;
 //       getColorTopRight, setColorBottomRight, getColorBottomRight,
 //       setColorBottomLeft, getColorBottomLeft, read, write.
 
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Default contructor.
+ */
+Rectangle::Rectangle() {
+    
+}
 
+/**
+ * Requires: Nothing.
+ * Modifies: start, end, colorTopLeft, colorTopRight, colorBottomRight,
+ *           colorBottomLeft.
+ * Effects:  Overloaded contructor. Sets start, end and single color.
+ */
+Rectangle::Rectangle(Point pt1, Point pt2, Color color) {
+    setStart(pt1);
+    setEnd(pt2);
+    setColor(color);
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: start, end, colorTopLeft, colorTopRight, colorBottomRight,
+ *           colorBottomLeft.
+ * Effects:  Overloaded contructor. Sets start, end and four colors.
+ */
+Rectangle::Rectangle(Point pt1, Point pt2, Color cTopLeft, Color cTopRight,
+                     Color cBottomRight, Color cBottomLeft) {
+    setStart(pt1);
+    setEnd(pt2);
+    setColorTopLeft(cTopLeft);
+    setColorTopRight(cTopRight);
+    setColorBottomRight(cBottomRight);
+    setColorBottomLeft(cBottomLeft);
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: start.
+ * Effects:  Sets start point (top left) of rectangle.
+ */
+void Rectangle::setStart(Point pt) {
+    start = pt;
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns start point of rectangle.
+ */
+Point Rectangle::getStart() {
+    return start;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: end.
+ * Effects:  Sets end point (bottom right) of rectangle.
+ */
+void Rectangle::setEnd(Point pt) {
+    end = pt;
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns end point of rectangle.
+ */
+Point Rectangle::getEnd() {
+    return end;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: colorTopLeft, colorTopRight, colorBottomRight, colorBottomLeft.
+ * Effects:  Sets the four colors of rectangle to color.
+ */
+void Rectangle::setColor(Color color) {
+    setColorTopLeft(color);
+    setColorTopRight(color);
+    setColorBottomLeft(color);
+    setColorBottomRight(color);
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: colorTopLeft.
+ * Effects:  Sets top left color of rectangle.
+ */
+void Rectangle::setColorTopLeft(Color color) {
+    colorTopLeft = color;
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns top left color of rectangle.
+ */
+Color Rectangle::getColorTopLeft() {
+    return colorTopLeft;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: colorTopRight.
+ * Effects:  Sets top right color of rectangle.
+ */
+void Rectangle::setColorTopRight(Color color) {
+    colorTopRight = color;
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns top right color of rectangle.
+ */
+Color Rectangle::getColorTopRight() {
+    return colorTopRight;
+    
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: colorBottomRight.
+ * Effects:  Sets bottom rihgt color of rectangle.
+ */
+void Rectangle::setColorBottomRight(Color color) {
+    colorBottomRight = color;
+    return;
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns bottom right color of rectangle.
+ */
+Color Rectangle::getColorBottomRight() {
+    return colorBottomRight;
+    
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: colorBottomLeft.
+ * Effects:  Sets bottom left color of rectangle.
+ */
+void Rectangle::setColorBottomLeft(Color c) {
+    colorBottomLeft = c;
+    return;
+    
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns bottom left color of rectangle.
+ */
+Color Rectangle::getColorBottomLeft() {
+    return colorBottomLeft;
+}
+
+/**
+ * Requires: ins is in good state.
+ * Modifies: ins, start, end, colorTopLeft, colorTopRight,
+ *           colorBottomRight, colorBottomLeft.
+ * Effects:  Reads rectangle in forms
+ *           start end color
+ *           start end cTopLeft cTopRight cBottomRight cBottomLeft
+ */
+void Rectangle::read(istream& ins) {
+    // fix me
+    return;
+}
+
+/**
+ * Requires: outs is in good state.
+ * Modifies: outs.
+ * Effects:  Writes rectangle in form
+ *           start end cTopLeft cTopRight cBottomRight cBottomLeft
+ */
+void Rectangle::write(ostream& outs) {
+    // fix me
+    return;
+}
 
 // Your code goes above this line.
 // Don't change the implementations below!
