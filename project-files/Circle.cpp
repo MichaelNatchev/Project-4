@@ -27,9 +27,9 @@ Circle::Circle() {
 }
 
 Circle::Circle(Point pt, int r, Color c) {
-    center = pt;
-    radius = r;
-    color = c;
+    setCenter(pt);
+    setRadius(r);
+    setColor(c);
 }
 
 void Circle::setCenter(Point pt) {

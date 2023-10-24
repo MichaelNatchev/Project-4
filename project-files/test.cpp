@@ -25,6 +25,23 @@
 
 using namespace std;
 
+void file_check() {
+
+    // open one of the text files that are part of the starter code
+    ifstream ins;
+    ins.open("lines.txt");
+
+    // if the file was not in the correct directory, the stream state is fail
+    if (ins.fail()) {
+        cout << "Could not open data1.txt" << endl;
+    }
+    else {
+        cout << "Success! Text files are in the right directory." << endl;
+    }
+    ins.close();
+    
+    return;
+}
 
 void test_Circle();
 void test_Color();
@@ -34,12 +51,18 @@ void test_Rectangle();
 void test_Triangle();
 
 void startTests() {
+    file_check();
+    
     test_Point();
     
     // call other test functions here
     
     return;
 }
+
+
+
+
 
 void test_Point() {
     // test of default constructor
@@ -60,6 +83,35 @@ void test_Point() {
     cout << "( " << p1.getX()
          << ", " << p1.getY()
          << " )" << endl;
+    
+    // test of member function: setX()
+    p1.setX(923);
+    // test of member function: setY()
+    p1.setY(-234);
+    
+    cout << "Expected: (99,0), actual: ";
+    cout << "( " << p1.getX()
+         << ", " << p1.getY()
+         << " )" << endl;
+    
+    
+    
+    
+    
+    cout << "Expected: (3,9), actual: ";
+    cout << "(" << p2.getX()
+         << ", " << p2.getY()
+         << ")" << endl;
+    
+    ifstream data;
+    data.open("data1.txt");
+    p2.read(data);
+    
+    cout << "Expected: (4,5), actual: ";
+    cout << "(" << p2.getX()
+         << ", " << p2.getY()
+         << ")" << endl;
+    
     
     return;
 }

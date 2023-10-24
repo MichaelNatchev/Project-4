@@ -48,8 +48,7 @@ void Graphics::clear() {
 }
 
 void Graphics::setPixel(int x, int y, Color color) {
-
-
+    
 }
 
 

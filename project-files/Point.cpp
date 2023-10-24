@@ -24,12 +24,12 @@ Point::Point() {
 }
 
 Point::Point(int xVal, int yVal) {
-    x = xVal;
-    y = yVal;
+    setX(xVal);
+    setY(yVal);
 }
 
 void Point::setX(int xVal) {
-    x = xVal;
+    x = checkRange(xVal);
 }
 
 int Point::getX() {
@@ -37,7 +37,7 @@ int Point::getX() {
 }
 
 void Point::setY(int yVal) {
-    y = yVal;
+    y = checkRange(yVal);
 }
 
 int Point::getY() {
@@ -45,17 +45,35 @@ int Point::getY() {
 }
 
 void Point::read(istream& ins) {
+    char openParen;
+    char comma;
+    char closeParen;
     
+    ins >> openParen; // Read the opening parenthesis '('
+
+        // Check if the opening parenthesis was successfully read
+        if (openParen == '(') {
+            ins >> x;      // Read x
+            ins >> comma;  // Read the comma ','
+            ins >> y;      // Read y
+            ins >> closeParen; // Read the closing parenthesis ')'
+        }
+        else {
+            cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
+        }
 }
 
 void Point::write(ostream& outs) {
-
-
+    outs << "("  << checkRange(x) << ", " << checkRange(y) << ")";
 }
 
 int Point::checkRange(int val) {
-
-    return 0;
+    if (val >= 0 && val <= DIMENSION) {
+        return val;
+    } else if (val < 0){
+        return 0;
+    }
+    return DIMENSION - 1;
 }
 
 // Your code goes above this line.
