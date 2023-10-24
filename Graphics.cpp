@@ -5,10 +5,10 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Michael Natchev, Mark Zhu
+ * mnatchev, markzhu
  *
- * <#Description#>
+ * Testing from Michael's branch
  */
 
 #include <iostream>
@@ -24,6 +24,33 @@ using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
 
+Graphics::Graphics() {
+    for (int i = 0; i < 100; i++) {
+        for (int j = 0; j < 100; j++) {
+            Color color;
+            setPixel(i, j, color);
+        }
+    }
+}
+
+void Graphics::initArray() {
+    for (int i = 0; i < 100; i++) {
+        for (int j = 0; j < 100; j++) {
+            Color pixelData[100][100];
+            Color color;
+            setPixel(i, j, color);
+        }
+    }
+}
+
+void Graphics::clear() {
+
+}
+
+void Graphics::setPixel(int x, int y, Color color) {
+
+
+}
 
 
 // Your code goes above this line.

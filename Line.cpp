@@ -19,6 +19,47 @@ using namespace std;
 #include "Graphics.h"
 #include "Shape.h"
 
+Line::Line() {
+    
+}
+
+Line::Line(Point pt1, Point pt2, Color color) {
+    start = pt1;
+    end = pt2;
+    lineColor = color;
+}
+
+void Line::setStart(Point pt) {
+    start = pt;
+}
+
+Point Line::getStart() {
+    return start;
+}
+
+void Line::setEnd(Point pt) {
+    end = pt;
+}
+
+Point Line::getEnd() {
+    return end;
+}
+
+void Line::setColor(Color color) {
+    lineColor = color;
+}
+
+Color Line::getColor() {
+    return lineColor;
+}
+
+void Line::read(istream& ins) {
+
+}
+
+void Line::write(ostream& outs) {
+
+}
 
 class Line: public Shape
 {

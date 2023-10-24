@@ -22,35 +22,28 @@ using namespace std;
 #include "Rectangle.h"
 #include "Graphics.h"
 
+// DO NOT MODIFY LINES 25-------------------------------------
+
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints an opening message.
  */
-void printOpener() {
-    cout << "";
-    return;
-}
+void printOpener();
 
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints a closing message.
  */
-void printCloser() {
-    cout << "";
-    return;
-}
+void printCloser();
 
 /**
  * Requires: Nothing.
  * Modifies: cout.
  * Effects:  Prints a menu.
  */
-void printMenu() {
-    cout << "";
-    return;
-}
+void printMenu();
 
 /**
  * Requires: ins is in good state.
@@ -59,18 +52,14 @@ void printMenu() {
  *           (and appends .txt) until the file is successfully opened.
  *           Returns the name of the file that was opened.
  */
-string openFile(ifstream& ins) {
-    return "todo";
-}
+string openFile(ifstream& ins);
 
 /**
  * Requires: Nothing.
  * Modifies: Nothing.
  * Effects:  Returns str with all of its alphabetical characters lowercased.
  */
-string tolower(string str) {
-    return "todo";
-}
+string tolower(string str);
 
 /**
  * Requires: Nothing.
@@ -90,9 +79,7 @@ string tolower(string str) {
  *     Print "[Loaded <filename>]", where <filename> is replaced with 
  *                                  the name of the file.
  */
-void loadFile(Graphics& drawer) {
-    return;
-}
+void loadFile(Graphics& drawer);
 
 /**
  * Requires: Nothing.
@@ -103,9 +90,9 @@ void loadFile(Graphics& drawer) {
  *     Write image to file.
  *     Print "[Wrote filename]"
  */
-void writeFile(const Graphics& drawer) {
-    return;
-}
+void writeFile(const Graphics& drawer);
+
+// END OF DO NOT MODIFY
 
 void coolPics() {
     Graphics drawer;
@@ -146,27 +133,51 @@ void coolPics() {
     
     return;
 }
+// TO-DO
 
-void writeFile(const Graphics& drawer)
-{
-    // TODO: implement
-    // This will make use of Graphics::writeFile()
+/**
+ * Requires: Nothing.
+ * Modifies: Nothing.
+ * Effects:  Returns str with all of its alphabetical characters lowercased.
+ */
+string tolower(string str) {
+    return "Todo";
+}
+
+/**
+ * Requires: Nothing.
+ * Modifies: cin, drawer.
+ * Effects:
+ *     Opens a file
+ *     Start with a blank canvas (drawer)
+ *     Start reading from file.  For each line....
+ *        Read the 1st character to determine shape
+ *        Read the shape:  L reads a line, C reads a circle, T read a triangle
+ *            R reads a rectangle.
+ *            For any other character, clears drawer and prints
+ *            "Error in input file: " << [character already read]
+ *            << [all chars remaining on the line] << endl;
+ *        Draw shape on canvas
+ *     Close file
+ *     Print "[Loaded <filename>]", where <filename> is replaced with
+ *                                  the name of the file.
+ */
+void loadFile(Graphics& drawer) {
     return;
 }
 
-void loadFile(Graphics& drawer)
-{
-    // TODO: implement
+/**
+ * Requires: Nothing.
+ * Modifies: cin, cout, drawer.
+ * Effects:
+ *     Read filename from user
+ *     concatenate filename with .bmp
+ *     Write image to file.
+ *     Print "[Wrote filename]"
+ */
+void writeFile(const Graphics& drawer) {
     return;
 }
-
-string tolower(string str)
-{
-    // TODO: implement
-
-    return str;
-}
-
 
 // Don't change the implementations below!
 
