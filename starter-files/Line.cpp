@@ -5,8 +5,8 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * Mark Zhu, Michael Natchev
- * markzhu, mnatchev
+ * <#Name(s)#>
+ * <#uniqname(s)#>
  *
  * <#Description#>
  */
@@ -17,7 +17,51 @@
 // TODO: implement two Line constructors, setStart, getStart, setEnd,
 //       getEnd, setColor, getColor, read, write.
 
+Line::Line() {
+    
+}
 
+Line::Line(Point pt1, Point pt2, Color color) {
+    start = pt1;
+    end = pt2;
+    lineColor = color;
+}
+
+void Line::setStart(Point pt) {
+    start = pt;
+}
+
+Point Line::getStart() {
+    return start;
+}
+
+void Line::setEnd(Point pt) {
+    end = pt;
+}
+
+Point Line::getEnd() {
+    return end;
+}
+
+void Line::setColor(Color color) {
+    lineColor = color;
+}
+
+Color Line::getColor() {
+    return lineColor;
+}
+
+void Line::read(istream& ins) {
+
+}
+
+void Line::write(ostream& outs) {
+
+}
+
+void Line::draw(Graphics& drawer) {
+
+}
 
 // Your code goes above this line.
 // Don't change the implementations below!
