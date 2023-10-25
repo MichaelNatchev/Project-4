@@ -62,9 +62,6 @@ void startTests() {
 }
 
 
-
-
-
 void test_Point() {
     
     cout << "Now Testing Point" << endl;
@@ -96,10 +93,6 @@ void test_Point() {
     cout << "( " << p1.getX()
          << ", " << p1.getY()
          << " )" << endl;
-    
-    
-    
-    
     
     cout << "Expected: (3,9), actual: ";
     cout << "(" << p2.getX()
