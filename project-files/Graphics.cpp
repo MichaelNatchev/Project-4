@@ -21,8 +21,6 @@
 #include "bmp.h"
 
 
-#include "Color.h"   // is this okay?
-
 using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
