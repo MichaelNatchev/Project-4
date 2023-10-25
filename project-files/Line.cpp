@@ -18,18 +18,13 @@
 //       getEnd, setColor, getColor, read, write.
 
 Line::Line() {
-    Point point(0, 0);
-    Color color;
-
-    start = point;
-    end = point;
-    lineColor = color;
+   
 }
 
 Line::Line(Point pt1, Point pt2, Color color) {
-    start = pt1;
-    end = pt2;
-    lineColor = color;
+    setStart(pt1);
+    setEnd(pt2);
+    setColor(color);
 }
 
 void Line::setStart(Point pt) {
@@ -58,61 +53,25 @@ Color Line::getColor() {
 
 void Line::read(istream& ins) {
     char l;
-    char paren;
-    char comma;
 
-    Point start;
-    int x1;
-    int x2;
-
-    Point end;
-    int y1;
-    int y2;
-
-    Color color;
-    int r;
-    int g;
-    int b;
-    
-
-    ins >> l; // Read the opening parenthesis '('
-
-    // Check if the opening parenthesis was successfully read
-    if (l == 'L') {
-        ins >> paren;
-        ins >> x1;
-        ins >> comma;
-        ins >> y1;
-        ins >> paren;
-
-        ins >> paren;
-        ins >> x2;
-        ins >> comma;
-        ins >> y2;
-        ins >> paren;
-
-        ins >> r;
-        ins >> g;
-        ins >> b;
-
-        start.setX(x1);
-        start.setY(y1);
-        end.setX(x2);
-        end.setY(y2);
-
-        color.setRed(r);
-        color.setGreen(g);
-        color.setBlue(b);
-    }
-    else {
-        cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
+    // Read the line indicator 'L'
+    while (ins >> l) {
+        // Check if the line indicator was successfully read
+        if (l == 'L') {
+            start.read(ins);
+            end.read(ins);
+            lineColor.read(ins);
+            return;
+        }
+        else {
+            cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
+        }
     }
 }
 
 void Line::write(ostream& outs) {
-    outs << "L " << "(" << start << ", " << end << ") "
-        << lineColor.getRed() << lineColor.getGreen() 
-        << lineColor.getBlue();
+    outs << start << " " << end << " "
+    << lineColor;
 }
 
 

@@ -92,7 +92,19 @@ int Color::getBlue() {
  *     Example:  100  255  125
  */
 void Color::read(istream& ins) {
-    // fix me
+    
+    int r;
+    int g;
+    int b;
+    
+    ins >> r;
+    ins >> g;
+    ins >> b;
+    
+    red = checkRange(r);
+    green = checkRange(g);
+    blue = checkRange(b);
+    
     return;
 }
 

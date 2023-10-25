@@ -64,7 +64,7 @@ void Point::read(istream& ins) {
 }
 
 void Point::write(ostream& outs) {
-    outs << "("  << checkRange(x) << ", " << checkRange(y) << ")";
+    outs << "("  << checkRange(x) << "," << checkRange(y) << ")";
 }
 
 int Point::checkRange(int val) {
