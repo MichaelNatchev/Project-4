@@ -56,6 +56,7 @@ void startTests() {
     test_Point();
     
     // call other test functions here
+    test_Circle();
     
     return;
 }
@@ -65,6 +66,8 @@ void startTests() {
 
 
 void test_Point() {
+    
+    cout << "Now Testing Point" << endl;
     // test of default constructor
     Point p1;
     cout << "Expected: (0,0), actual: " << p1 << endl;
@@ -112,9 +115,61 @@ void test_Point() {
          << ", " << p2.getY()
          << ")" << endl;
     
+    p2.read(data);
+    
+    cout << "Expected: (34,54), actual: ";
+    cout << "(" << p2.getX()
+         << ", " << p2.getY()
+         << ")" << endl;
+    
     
     return;
 }
 
 
+void test_Circle() {
+    cout << "Now Testing Circle" << endl;
+    
+    Point p1(2, 4);
+    Color c(123, 52, 35);
+    
+    
+    // test of default constructor
+    Circle cir1;
+    cout << "Expected: nothing, actual: " << cir1 << endl;
+    
+    // test of the non-default constructor
+    Circle cir2(p1, 3, c);
+    cout << "Expected: center (2, 4), radius 3, color (123, 52, 35), actual: " << cir2 << endl;
 
+    // test of member function: setCenter()
+    cir1.setCenter(p1);
+    // test of member function: setRadius()
+    cir1.setRadius(45);
+    // test of member function: setColor()
+    cir1.setColor(c);
+    
+    // test of member functions getCenter(), getRadius, and getColor()
+    cout << "Expected: Center (2, 4), Radius 45, Color (123, 52, 35) actual: ";
+    cout << cir1.getCenter() << " " << cir1.getRadius() << " " << cir1.getColor() << endl;
+    
+    
+//    ifstream data;
+//    data.open("data1.txt");
+//    p2.read(data);
+//    
+//    cout << "Expected: (4,5), actual: ";
+//    cout << "(" << p2.getX()
+//         << ", " << p2.getY()
+//         << ")" << endl;
+//    
+//    p2.read(data);
+//    
+//    cout << "Expected: (34,54), actual: ";
+//    cout << "(" << p2.getX()
+//         << ", " << p2.getY()
+//         << ")" << endl;
+    
+    
+    return;
+}

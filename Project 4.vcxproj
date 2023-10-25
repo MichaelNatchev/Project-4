@@ -18,6 +18,31 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="project-files\bmp.h" />
+    <ClInclude Include="project-files\Circle.h" />
+    <ClInclude Include="project-files\Color.h" />
+    <ClInclude Include="project-files\Graphics.h" />
+    <ClInclude Include="project-files\Line.h" />
+    <ClInclude Include="project-files\Point.h" />
+    <ClInclude Include="project-files\Rectangle.h" />
+    <ClInclude Include="project-files\Shape.h" />
+    <ClInclude Include="project-files\Triangle.h" />
+    <ClInclude Include="project-files\utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="project-files\Circle.cpp" />
+    <ClCompile Include="project-files\Color.cpp" />
+    <ClCompile Include="project-files\Graphics.cpp" />
+    <ClCompile Include="project-files\Line.cpp" />
+    <ClCompile Include="project-files\pics.cpp" />
+    <ClCompile Include="project-files\Point.cpp" />
+    <ClCompile Include="project-files\Rectangle.cpp" />
+    <ClCompile Include="project-files\Shape.cpp" />
+    <ClCompile Include="project-files\start.cpp" />
+    <ClCompile Include="project-files\test.cpp" />
+    <ClCompile Include="project-files\Triangle.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,30 +151,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Starter files\bmp.h" />
-    <ClInclude Include="..\Starter files\Circle.h" />
-    <ClInclude Include="..\Starter files\Color.h" />
-    <ClInclude Include="..\Starter files\Graphics.h" />
-    <ClInclude Include="..\Starter files\Line.h" />
-    <ClInclude Include="..\Starter files\Point.h" />
-    <ClInclude Include="..\Starter files\Rectangle.h" />
-    <ClInclude Include="..\Starter files\Shape.h" />
-    <ClInclude Include="..\Starter files\Triangle.h" />
-    <ClInclude Include="..\Starter files\utility.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Starter files\Circle.cpp" />
-    <ClCompile Include="..\Starter files\Color.cpp" />
-    <ClCompile Include="..\Starter files\Graphics.cpp" />
-    <ClCompile Include="..\Starter files\Line.cpp" />
-    <ClCompile Include="..\Starter files\pics.cpp" />
-    <ClCompile Include="..\Starter files\Point.cpp" />
-    <ClCompile Include="..\Starter files\Rectangle.cpp" />
-    <ClCompile Include="..\Starter files\Shape.cpp" />
-    <ClCompile Include="..\Starter files\start.cpp" />
-    <ClCompile Include="..\Starter files\Triangle.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

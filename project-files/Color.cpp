@@ -66,42 +66,20 @@ int Color::getRed() {
     return red;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: green.
- * Effects:  Sets green value. If greenVal is ouside of [0,255],
- *           assigns to the closest of 0 and 255.
- */
 void Color::setGreen(int greenVal) {
     green = checkRange(greenVal);
     return;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns green value.
- */
 int Color::getGreen() {
     return green;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: blue.
- * Effects:  Sets blue value. If blueVal is ouside of [0,255],
- *           assigns to the closest of 0 and 255.
- */
 void Color::setBlue(int blueVal) {
     blue = checkRange(blueVal);
     return;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns blue value.
- */
 int Color::getBlue() {
     return blue;
 }
@@ -126,6 +104,7 @@ void Color::read(istream& ins) {
  */
 void Color::write(ostream& outs) {
     // fix me
+    outs << checkRange(red) << " " << checkRange(green) << " " << checkRange(blue);
     return;
 }
 
