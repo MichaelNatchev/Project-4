@@ -61,6 +61,14 @@ void Line::read(istream& ins) {
     char paren;
     char comma;
 
+    Point start;
+    int x1;
+    int x2;
+
+    Point end;
+    int y1;
+    int y2;
+
     Color color;
     int r;
     int g;
@@ -72,20 +80,25 @@ void Line::read(istream& ins) {
     // Check if the opening parenthesis was successfully read
     if (l == 'L') {
         ins >> paren;
-        ins >> start;
+        ins >> x1;
         ins >> comma;
-        ins >> end;
+        ins >> y1;
         ins >> paren;
 
         ins >> paren;
-        ins >> start;
+        ins >> x2;
         ins >> comma;
-        ins >> end;
+        ins >> y2;
         ins >> paren;
 
         ins >> r;
         ins >> g;
         ins >> b;
+
+        start.setX(x1);
+        start.setY(y1);
+        end.setX(x2);
+        end.setY(y2);
 
         color.setRed(r);
         color.setGreen(g);
