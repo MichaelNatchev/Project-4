@@ -19,8 +19,8 @@
 // TODO: implement two constructors, setX, getX, setY, getY, read, write, checkRange.
 
 Point::Point() {
-    x = 0;
-    y = 0;
+    setX(0);
+    setY(0);
 }
 
 Point::Point(int xVal, int yVal) {
