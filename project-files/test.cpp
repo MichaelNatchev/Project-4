@@ -61,9 +61,6 @@ void startTests() {
 }
 
 
-
-
-
 void test_Point() {
     // test of default constructor
     Point p1;
@@ -93,10 +90,6 @@ void test_Point() {
     cout << "( " << p1.getX()
          << ", " << p1.getY()
          << " )" << endl;
-    
-    
-    
-    
     
     cout << "Expected: (3,9), actual: ";
     cout << "(" << p2.getX()
