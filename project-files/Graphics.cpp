@@ -20,35 +20,39 @@
 #include "Graphics.h"
 #include "bmp.h"
 
+
+#include "Color.h"   // is this okay?
+
 using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
 
 Graphics::Graphics() {
-    for (int i = 0; i < 100; i++) {
-        for (int j = 0; j < 100; j++) {
+    for (int y = 0; y < DIMENSION; y++) {
+        for (int x = 0; x < DIMENSION; x++) {
             Color color;
-            setPixel(i, j, color);
+            setPixel(x, y, color);
         }
     }
 }
 
 void Graphics::initArray() {
-    for (int i = 0; i < 100; i++) {
-        for (int j = 0; j < 100; j++) {
-            Color pixelData[100][100];
+    for (int y = 0; y < DIMENSION; y++) {
+        for (int x = 0; x < DIMENSION; x++) {
             Color color;
-            setPixel(i, j, color);
+            setPixel(x, y, color);
         }
     }
 }
 
 void Graphics::clear() {
-
+    initArray();
 }
 
 void Graphics::setPixel(int x, int y, Color color) {
-    
+    if (x >= 0 && x < 100 && y >= 0 && y < 100) {
+        pixelData[y][x] = color;
+    }
 }
 
 
@@ -101,8 +105,8 @@ void Graphics::writeFile(string fileName) const
             Color pixel = pixelData[i][j];
 
             // write RGB triple to outfile
-            outFile << (BYTE) pixel.getBlue() << (BYTE) pixel.getGreen()
-            << (BYTE) pixel.getRed();
+            outFile << (BYTE)pixel.getBlue() << (BYTE)pixel.getGreen()
+                << (BYTE)pixel.getRed();
         }
 
         // write padding to outfile
