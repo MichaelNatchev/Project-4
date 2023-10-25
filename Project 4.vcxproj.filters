@@ -15,66 +15,69 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Starter files\bmp.h">
+    <ClInclude Include="project-files\Triangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Circle.h">
+    <ClInclude Include="project-files\utility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Color.h">
+    <ClInclude Include="project-files\bmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Graphics.h">
+    <ClInclude Include="project-files\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Line.h">
+    <ClInclude Include="project-files\Color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Point.h">
+    <ClInclude Include="project-files\Graphics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Rectangle.h">
+    <ClInclude Include="project-files\Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Shape.h">
+    <ClInclude Include="project-files\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\Triangle.h">
+    <ClInclude Include="project-files\Rectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Starter files\utility.h">
+    <ClInclude Include="project-files\Shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Starter files\Triangle.cpp">
+    <ClCompile Include="project-files\start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Circle.cpp">
+    <ClCompile Include="project-files\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Color.cpp">
+    <ClCompile Include="project-files\Triangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Graphics.cpp">
+    <ClCompile Include="project-files\Circle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Line.cpp">
+    <ClCompile Include="project-files\Color.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\pics.cpp">
+    <ClCompile Include="project-files\Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Point.cpp">
+    <ClCompile Include="project-files\Line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Rectangle.cpp">
+    <ClCompile Include="project-files\pics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\Shape.cpp">
+    <ClCompile Include="project-files\Point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Starter files\start.cpp">
+    <ClCompile Include="project-files\Rectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="project-files\Shape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

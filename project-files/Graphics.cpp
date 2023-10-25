@@ -20,7 +20,6 @@
 #include "Graphics.h"
 #include "bmp.h"
 
-
 using namespace std;
 
 // TODO: implement constructor, clear, setPixel, initArray.
