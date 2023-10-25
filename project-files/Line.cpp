@@ -18,7 +18,12 @@
 //       getEnd, setColor, getColor, read, write.
 
 Line::Line() {
-    
+    Point point(0, 0);
+    Color color;
+
+    start = point;
+    end = point;
+    lineColor = color;
 }
 
 Line::Line(Point pt1, Point pt2, Color color) {
@@ -52,11 +57,49 @@ Color Line::getColor() {
 }
 
 void Line::read(istream& ins) {
+    char l;
+    char paren;
+    char comma;
 
+    Color color;
+    int r;
+    int g;
+    int b;
+    
+
+    ins >> l; // Read the opening parenthesis '('
+
+    // Check if the opening parenthesis was successfully read
+    if (l == 'L') {
+        ins >> paren;
+        ins >> start;
+        ins >> comma;
+        ins >> end;
+        ins >> paren;
+
+        ins >> paren;
+        ins >> start;
+        ins >> comma;
+        ins >> end;
+        ins >> paren;
+
+        ins >> r;
+        ins >> g;
+        ins >> b;
+
+        color.setRed(r);
+        color.setGreen(g);
+        color.setBlue(b);
+    }
+    else {
+        cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
+    }
 }
 
 void Line::write(ostream& outs) {
-
+    outs << "L " << "(" << start << ", " << end << ") "
+        << lineColor.getRed() << lineColor.getGreen() 
+        << lineColor.getBlue();
 }
 
 
