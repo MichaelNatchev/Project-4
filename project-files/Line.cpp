@@ -55,17 +55,14 @@ void Line::read(istream& ins) {
     char l;
 
     // Read the line indicator 'L'
-    while (ins >> l) {
-        // Check if the line indicator was successfully read
-        if (l == 'L') {
-            start.read(ins);
-            end.read(ins);
-            lineColor.read(ins);
-            return;
-        }
-        else {
-            cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
-        }
+    ins >> l;
+        
+    // Check if the line indicator was successfully read
+    if (l == 'L') {
+        start.read(ins);
+        end.read(ins);
+        lineColor.read(ins);
+        return;
     }
 }
 
