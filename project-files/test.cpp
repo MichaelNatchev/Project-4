@@ -181,7 +181,7 @@ void test_Color() {
     
     // test of default constructor
     Color c1;
-    cout << "Expected: 0 0 0, actual: " << c1 << endl;
+    cout << "Expected: (0,0) (0,0) 0 0 0, actual: " << c1 << endl;
     
     // test of the non-default constructor
     Color c2(124, 35, 234);
