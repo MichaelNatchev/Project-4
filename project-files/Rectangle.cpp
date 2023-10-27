@@ -206,9 +206,13 @@ Color Rectangle::getColorBottomLeft() {
 void Rectangle::read(istream& ins) {
     start.read(ins);
     end.read(ins);
+    cout << " ";
     colorTopLeft.read(ins);
+    cout << " ";
     colorTopRight.read(ins);
+    cout << " ";
     colorBottomRight.read(ins);
+    cout << " ";
     colorBottomLeft.read(ins);
     return;
 }
