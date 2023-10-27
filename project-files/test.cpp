@@ -128,7 +128,7 @@ void test_Circle() {
     cout << "Now Testing Circle" << endl;
     
     Point p1(2, 4);
-    int r = 3;
+    int r = -3;
     Color c(123, 52, 35);
     
     
@@ -143,7 +143,7 @@ void test_Circle() {
     // test of member function: setCenter()
     cir1.setCenter(p1);
     // test of member function: setRadius()
-    cir1.setRadius(45);
+    cir1.setRadius(-45);
     // test of member function: setColor()
     cir1.setColor(c);
     

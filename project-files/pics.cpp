@@ -5,8 +5,8 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Mark Zhu, Michael Natchev
+ * markzhu, mnatchev
  *
  * <#Description#>
  */
@@ -22,7 +22,7 @@ using namespace std;
 #include "Rectangle.h"
 #include "Graphics.h"
 
-// DO NOT MODIFY LINES 25-------------------------------------
+// DO NOT MODIFY FUNCTION DEFINITIONS-------------------------------------
 
 /**
  * Requires: Nothing.
@@ -133,6 +133,7 @@ void coolPics() {
     
     return;
 }
+
 // TO-DO
 
 /**
@@ -141,7 +142,11 @@ void coolPics() {
  * Effects:  Returns str with all of its alphabetical characters lowercased.
  */
 string tolower(string str) {
-    return "Todo";
+    string newStr = "";
+    for (int i = 0; i < str.size() - 1; i++) {
+        newStr += tolower(str.at(i));
+    }
+    return newStr;
 }
 
 /**
@@ -163,6 +168,50 @@ string tolower(string str) {
  *                                  the name of the file.
  */
 void loadFile(Graphics& drawer) {
+    ifstream data;
+    
+    string file;
+    cin >> file;
+    file += ".txt";
+    
+    data.open(file);
+    
+    if (!data.is_open()) {
+        cerr << "Failed to open file";
+        return;
+    }
+    string line;
+    while (getline(data, line)) {
+        if (!line.empty()) {
+            char letter;
+            data >> letter;
+            if (letter == 'L') {
+                Line l;
+                l.read(data);
+                l.draw(drawer);
+            } else if (letter == 'C') {
+                Circle cir;
+                cir.read(data);
+                cir.draw(drawer);
+            } else if (letter == 'T') {
+                Triangle t;
+                t.read(data);
+                t.draw(drawer);
+            } else if (letter == 'R') {
+                Rectangle r;
+                r.read(data);
+                r.draw(drawer);
+            } else {
+                drawer.clear();
+                string remaining;
+                
+                getline(data, remaining);
+                cout << "Error in input file: " << letter << remaining << endl;
+            }
+        }
+    }
+    data.close();
+    cout << "[Loaded " << file << "]" << endl;
     return;
 }
 
@@ -176,6 +225,11 @@ void loadFile(Graphics& drawer) {
  *     Print "[Wrote filename]"
  */
 void writeFile(const Graphics& drawer) {
+    string filename;
+    cin >> filename;
+    filename += ".bmp";
+    drawer.writeFile(filename);
+    cout << "[Wrote " << filename << "]" << endl;
     return;
 }
 
