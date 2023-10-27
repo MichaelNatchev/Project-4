@@ -26,9 +26,9 @@ Circle::Circle() {
 }
 
 Circle::Circle(Point pt, int r, Color c) {
-    setCenter(pt);
-    setRadius(r);
-    setColor(c);
+    center = pt;
+    radius = checkRadius(r);
+    color = c;
 }
 
 void Circle::setCenter(Point pt) {
@@ -56,11 +56,23 @@ Color Circle::getColor() {
 }
 
 void Circle::read(istream& ins) {
+//    char c;
+//
+//    // Read the circle indicator 'C'
+//        ins >> c;
+//        
+    // Check if the line indicator was successfully read
+    
+        center.read(ins);
+        ins >> radius;
+        color.read(ins);
+        return;
+
 
 }
 
 void Circle::write(ostream& outs) {
-
+    outs << center << " " << radius << " " << color;
 }
 
 

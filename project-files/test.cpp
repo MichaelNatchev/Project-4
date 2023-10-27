@@ -66,7 +66,7 @@ void startTests() {
 
 
 void test_Point() {
-    
+    cout << endl;
     cout << "Now Testing Point" << endl;
     // test of default constructor
     Point p1;
@@ -124,9 +124,11 @@ void test_Point() {
 
 
 void test_Circle() {
+    cout << endl;
     cout << "Now Testing Circle" << endl;
     
     Point p1(2, 4);
+    int r = 3;
     Color c(123, 52, 35);
     
     
@@ -135,8 +137,8 @@ void test_Circle() {
     cout << "Expected: nothing, actual: " << cir1 << endl;
     
     // test of the non-default constructor
-    Circle cir2(p1, 3, c);
-    cout << "Expected: center (2, 4), radius 3, color (123, 52, 35), actual: " << cir2 << endl;
+    Circle cir2(p1, r, c);
+    cout << "Expected: (2, 4) 3 123 52 35, actual: " << cir2 << endl;
 
     // test of member function: setCenter()
     cir1.setCenter(p1);
@@ -146,7 +148,7 @@ void test_Circle() {
     cir1.setColor(c);
     
     // test of member functions getCenter(), getRadius, and getColor()
-    cout << "Expected: Center (2, 4), Radius 45, Color (123, 52, 35) actual: ";
+    cout << "Expected: (2, 4) 45 123 52 35 actual: ";
     cout << cir1.getCenter() << " " << cir1.getRadius() << " " << cir1.getColor() << endl;
     
     
@@ -173,6 +175,7 @@ void test_Circle() {
 }
 
 void test_Color() {
+    cout << endl;
     cout << "Now Testing Color" << endl;
     
 //    Point p1(2, 4);
@@ -212,9 +215,10 @@ void test_Color() {
 }
 
 void test_Line() {
+    cout << endl;
     cout << "Now Testing Line" << endl;
     
-    Point p1(2, 4);
+    Point p1(23, 4);
     Point p2(5, 6);
     Color c1(50, 60, 70);
     
@@ -229,7 +233,7 @@ void test_Line() {
     
     // test of the non-default constructor
     Line L2(p1, p2, c1);
-    cout << "Expected: (2, 4) (5, 6) 50 60 70, actual: " << L2 << endl;
+    cout << "Expected: (23, 4) (5, 6) 50 60 70, actual: " << L2 << endl;
 
     L1.setStart(p3);
     L1.setEnd(p4);
@@ -245,7 +249,7 @@ void test_Line() {
     data.open("data1.txt");
     
     L3.read(data);
-    cout << "Expected: (4, 5) (6, 7) 66 77 88, actual: ";
+    cout << "Expected: (43, 5) (6, 7) 66 77 88, actual: ";
     cout << L3 << endl;
 
     L3.read(data);
@@ -256,6 +260,7 @@ void test_Line() {
 }
 
 void test_Triangle() {
+    cout << endl;
     cout << "Now Testing Triangle" << endl;
     
     Point v1(1, 2);
