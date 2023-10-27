@@ -202,38 +202,31 @@ Color Triangle::getVertexThreeColor() {
  */
 void Triangle::read(istream& ins) {
     // fix me
-//    char t;
-//
-//    // Read the triangle indicator 'T'
-//    ins >> t;
-        
+// Read vertexOne
+    vertexOne.read(ins);
 
-        // Read vertexOne
-            vertexOne.read(ins);
+    // Consume any leading whitespace characters
+    ins >> ws;
 
-            // Consume any leading whitespace characters
-            ins >> ws;
+    // Peek at the next character to determine the format
+    char nextChar = ins.peek();
 
-            // Peek at the next character to determine the format
-            char nextChar = ins.peek();
-
-            if (nextChar == '(') {
-                // It's the first format (v1 v2 v3 color)
-                // Read vertexTwo, vertexOneColor, and the remaining values
-                vertexTwo.read(ins);
-                vertexThree.read(ins);
-                vertexOneColor.read(ins);
-                setColor(vertexOneColor);
-            } else {
-                // It's the second format (v1 v1Color v2 v2Color v3 v3Color)
-                // Read the remaining values for the second format
-                vertexOneColor.read(ins);
-                vertexTwo.read(ins);
-                vertexTwoColor.read(ins);
-                vertexThree.read(ins);
-                vertexThreeColor.read(ins);
-            }
-    
+    if (nextChar == '(') {
+        // It's the first format (v1 v2 v3 color)
+        // Read vertexTwo, vertexOneColor, and the remaining values
+        vertexTwo.read(ins);
+        vertexThree.read(ins);
+        vertexOneColor.read(ins);
+        setColor(vertexOneColor);
+    } else {
+        // It's the second format (v1 v1Color v2 v2Color v3 v3Color)
+        // Read the remaining values for the second format
+        vertexOneColor.read(ins);
+        vertexTwo.read(ins);
+        vertexTwoColor.read(ins);
+        vertexThree.read(ins);
+        vertexThreeColor.read(ins);
+    }
 }
 
 /**
