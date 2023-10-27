@@ -64,11 +64,11 @@ void Point::read(istream& ins) {
 }
 
 void Point::write(ostream& outs) {
-    outs << "("  << checkRange(x) << ", " << checkRange(y) << ")";
+    outs << "("  << checkRange(x) << "," << checkRange(y) << ")";
 }
 
 int Point::checkRange(int val) {
-    if (val >= 0 && val <= DIMENSION) {
+    if (val >= 0 && val < DIMENSION) {
         return val;
     } else if (val < 0){
         return 0;

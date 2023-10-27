@@ -23,7 +23,6 @@ using namespace std;
 //       setRadius, getRadius, read, write.
 
 Circle::Circle() {
-
 }
 
 Circle::Circle(Point pt, int r, Color c) {
