@@ -202,13 +202,12 @@ Color Triangle::getVertexThreeColor() {
  */
 void Triangle::read(istream& ins) {
     // fix me
-    char t;
-
-    // Read the triangle indicator 'T'
-    ins >> t;
+//    char t;
+//
+//    // Read the triangle indicator 'T'
+//    ins >> t;
         
-    // Check if the line indicator was successfully read
-    if (t == 'T') {
+
         // Read vertexOne
             vertexOne.read(ins);
 
@@ -234,7 +233,6 @@ void Triangle::read(istream& ins) {
                 vertexThree.read(ins);
                 vertexThreeColor.read(ins);
             }
-    }
     
 }
 

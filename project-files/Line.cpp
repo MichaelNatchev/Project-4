@@ -52,18 +52,16 @@ Color Line::getColor() {
 }
 
 void Line::read(istream& ins) {
-    char l;
-
-    // Read the line indicator 'L'
-    ins >> l;
+//    char l;
+//
+//    // Read the line indicator 'L'
+//    ins >> l;
         
-    // Check if the line indicator was successfully read
-    if (l == 'L') {
-        start.read(ins);
-        end.read(ins);
-        lineColor.read(ins);
-        return;
-    }
+    start.read(ins);
+    end.read(ins);
+    lineColor.read(ins);
+    return;
+    
 }
 
 void Line::write(ostream& outs) {
