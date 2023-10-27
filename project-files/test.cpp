@@ -60,6 +60,7 @@ void startTests() {
     test_Color();
     test_Line();
     test_Triangle();
+    test_Rectangle();
     
     return;
 }
@@ -312,3 +313,59 @@ void test_Triangle() {
     return;
 }
 
+void test_Rectangle() {
+    cout << "Now Testing Rectangle" << endl;
+
+    Point s1(0, 1);
+    Point e1(2, 3);
+    Color c1(10, 20, 30);
+    Color c2(20, 30, 40);
+    Color c3(30, 40, 50);
+    Color c4(40, 50, 60);
+
+    Point s2(10, 11);
+    Point e2(22, 33);
+    Color c5(0, 255, 0);
+
+    Color c6(100, 0, 100);
+    Color c7(200, 0, 200);
+    Point p1(24, 78);
+
+    // test of default constructor
+    Rectangle r1;
+    cout << "Expected: (0, 0) (0, 0)  0 0 0   0 0 0   0 0 0     0 0 0, actual: " << r1 << endl;
+
+    // test of the non-default constructor
+    Rectangle r2(s2, e2, c5);
+    cout << "Expected: (10, 11) (22, 33)  0 255 0   0 255 0   0 255 0     0 255 0, actual: " << r2 << endl;
+
+    Rectangle r3(s1, e1, c1, c2, c3, c4);
+    cout << "Expected: (0, 1) (2, 3)  10 20 30   20 30 40   30 40 50   40 50 60, actual: " << r3 << endl;
+
+    // Test setters
+    r1.setColorTopLeft(c6);
+    r1.setColorBottomRight(c7);
+    r1.setStart(p1);
+
+    // Test getters
+    cout << "Expected: (24, 78) (0, 0)  100 0 100  0 0 0  200 0 200  0 0 0, actual: ";
+    cout << r1.getStart() << " " << r1.getEnd() << " " << r1.getColorTopLeft() << " " << r1.getColorTopRight() << " " << r1.getColorBottomRight() << " " << r1.getColorBottomLeft() << endl;
+    cout << endl;
+
+    Rectangle r4;
+
+    cout << "Testing read and write:" << endl;
+
+    ifstream data;
+    data.open("data1.txt");
+
+    r4.read(data);
+    cout << "Expected: R (20,40)  (40,80)  0 100 200, actual: ";
+    cout << r4 << endl;
+
+    r4.read(data);
+    cout << "Expected: R (20,11)  (24,57)  24 98 67   100 50 150  110 15 235  120 205 15, actual: ";
+    cout << r4 << endl;
+
+    return;
+}

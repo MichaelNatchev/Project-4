@@ -29,7 +29,12 @@ using namespace std;
  * Effects:  Default contructor.
  */
 Rectangle::Rectangle() {
-    
+    Point pt1;
+    setStart(pt1);
+    Point pt2;
+    setEnd(pt2);
+    Color color;
+    setColor(color);
 }
 
 /**
@@ -199,7 +204,12 @@ Color Rectangle::getColorBottomLeft() {
  *           start end cTopLeft cTopRight cBottomRight cBottomLeft
  */
 void Rectangle::read(istream& ins) {
-    // fix me
+    start.read(ins);
+    end.read(ins);
+    colorTopLeft.read(ins);
+    colorTopRight.read(ins);
+    colorBottomRight.read(ins);
+    colorBottomLeft.read(ins);
     return;
 }
 
@@ -210,7 +220,9 @@ void Rectangle::read(istream& ins) {
  *           start end cTopLeft cTopRight cBottomRight cBottomLeft
  */
 void Rectangle::write(ostream& outs) {
-    // fix me
+    outs << start << " " << end << " " << colorTopLeft << " "
+        << colorTopRight << " " << colorBottomRight
+        << colorBottomLeft << endl;
     return;
 }
 
