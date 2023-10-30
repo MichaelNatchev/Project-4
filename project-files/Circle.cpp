@@ -8,7 +8,7 @@
  * Michael Natchev, Mark Zhu
  * mnatchev, markzhu
  *
- * Can you read this?
+ * This is the circle class.
  * 
  */
 
@@ -18,9 +18,6 @@
 #include "utility.h"
 #include <algorithm>
 using namespace std;
-
-// TODO: setCenter, getCenter, setColor, getColor,
-//       setRadius, getRadius, read, write.
 
 Circle::Circle() {
 }
@@ -56,25 +53,15 @@ Color Circle::getColor() {
 }
 
 void Circle::read(istream& ins) {
-//    char c;
-//
-//    // Read the circle indicator 'C'
-//        ins >> c;
-//        
-    // Check if the line indicator was successfully read
-    
-        center.read(ins);
-        ins >> radius;
-        color.read(ins);
-        return;
-
-
+    center.read(ins);
+    ins >> radius;
+    color.read(ins);
+    return;
 }
 
 void Circle::write(ostream& outs) {
     outs << center << " " << radius << " " << color;
 }
-
 
 // Your code goes above this line.
 // Don't change the implementations below!

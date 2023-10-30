@@ -152,37 +152,13 @@ void test_Circle() {
     cout << "Expected: (2, 4) 45 123 52 35 actual: ";
     cout << cir1.getCenter() << " " << cir1.getRadius() << " " << cir1.getColor() << endl;
     
-    
-//    ifstream data;
-//    data.open("data1.txt");
-//    p2.read(data);
-//    
-//    cout << "Expected: (4,5), actual: ";
-//    cout << "(" << p2.getX()
-//         << ", " << p2.getY()
-//         << ")" << endl;
-//    
-//    p2.read(data);
-//    
-//    cout << "Expected: (34,54), actual: ";
-//    cout << "(" << p2.getX()
-//         << ", " << p2.getY()
-//         << ")" << endl;
-    
-    
-    // testing 123456789
-    
     return;
 }
 
 void test_Color() {
     cout << endl;
     cout << "Now Testing Color" << endl;
-    
-//    Point p1(2, 4);
-//    Color c(123, 52, 35);
-    
-    
+
     // test of default constructor
     Color c1;
     cout << "Expected: (0,0) (0,0) 0 0 0, actual: " << c1 << endl;
@@ -191,6 +167,14 @@ void test_Color() {
     Color c2(124, 35, 234);
     cout << "Expected: 124, 35, 234), actual: " << c2 << endl;
 
+    c1.setRed(234);
+    c1.setGreen(-34);
+    c1.setBlue(-345);
+    
+    // test of member functions getCenter(), getRadius, and getColor()
+    cout << "Expected: 234 0 255, actual: ";
+    cout << c1.getRed() << " " << c1.getGreen() << " " << c1.getBlue() << endl;
+    
     c1.setRed(20);
     c1.setGreen(30);
     c1.setBlue(40);

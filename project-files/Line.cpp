@@ -5,17 +5,14 @@
  * EECS 183
  * Project 4: CoolPics
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * Michael Natchev, Mark Zhu
+ * mnatchev, markzhu
  *
- * <#Description#>
+ * This is the lines class.
  */
 
 #include "Line.h"
 #include "Graphics.h"
-
-// TODO: implement two Line constructors, setStart, getStart, setEnd,
-//       getEnd, setColor, getColor, read, write.
 
 Line::Line() {
    
@@ -52,23 +49,16 @@ Color Line::getColor() {
 }
 
 void Line::read(istream& ins) {
-//    char l;
-//
-//    // Read the line indicator 'L'
-//    ins >> l;
-        
     start.read(ins);
     end.read(ins);
     lineColor.read(ins);
     return;
-    
 }
 
 void Line::write(ostream& outs) {
     outs << start << " " << end << " "
     << lineColor;
 }
-
 
 // Your code goes above this line.
 // Don't change the implementations below!
