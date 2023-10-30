@@ -8,15 +8,13 @@
  * Michael Natchev, Mark Zhu   
  * mnatchev, markzhu
  *
- * <#Description#>
+ * This is the point class.
  */
 
 #include "Point.h"
 
 // for the declaration of DIMENSION
 #include "utility.h"
-
-// TODO: implement two constructors, setX, getX, setY, getY, read, write, checkRange.
 
 Point::Point() {
     setX(0);
@@ -48,19 +46,15 @@ void Point::read(istream& ins) {
     char openParen;
     char comma;
     char closeParen;
-    
-    ins >> openParen; // Read the opening parenthesis '('
 
-        // Check if the opening parenthesis was successfully read
-        if (openParen == '(') {
-            ins >> x;      // Read x
-            ins >> comma;  // Read the comma ','
-            ins >> y;      // Read y
-            ins >> closeParen; // Read the closing parenthesis ')'
-        }
-        else {
-            cerr << "Error: Missing or incorrect opening parenthesis in input." << endl;
-        }
+    ins >> openParen;
+
+    if (openParen == '(') {
+        ins >> x;
+        ins >> comma;
+        ins >> y;
+        ins >> closeParen;
+    }
 }
 
 void Point::write(ostream& outs) {

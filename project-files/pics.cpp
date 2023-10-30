@@ -8,7 +8,7 @@
  * Mark Zhu, Michael Natchev
  * markzhu, mnatchev
  *
- * <#Description#>
+ * Loads text data and creates funky bmp files.
  */
 
 #include <iostream>
@@ -21,8 +21,6 @@ using namespace std;
 #include "Circle.h"
 #include "Rectangle.h"
 #include "Graphics.h"
-
-// DO NOT MODIFY FUNCTION DEFINITIONS-------------------------------------
 
 /**
  * Requires: Nothing.
@@ -92,8 +90,6 @@ void loadFile(Graphics& drawer);
  */
 void writeFile(const Graphics& drawer);
 
-// END OF DO NOT MODIFY
-
 void coolPics() {
     Graphics drawer;
     string command;
@@ -134,39 +130,14 @@ void coolPics() {
     return;
 }
 
-// TO-DO
-
-/**
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns str with all of its alphabetical characters lowercased.
- */
 string tolower(string str) {
     string newStr = "";
-    for (int i = 0; i < str.size() - 1; i++) {
+    for (int i = 0; i < str.size(); i++) {
         newStr += tolower(str.at(i));
     }
     return newStr;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: cin, drawer.
- * Effects:
- *     Opens a file
- *     Start with a blank canvas (drawer)
- *     Start reading from file.  For each line....
- *        Read the 1st character to determine shape
- *        Read the shape:  L reads a line, C reads a circle, T read a triangle
- *            R reads a rectangle.
- *            For any other character, clears drawer and prints
- *            "Error in input file: " << [character already read]
- *            << [all chars remaining on the line] << endl;
- *        Draw shape on canvas
- *     Close file
- *     Print "[Loaded <filename>]", where <filename> is replaced with
- *                                  the name of the file.
- */
 void loadFile(Graphics& drawer) {
     ifstream data;
     
@@ -176,38 +147,43 @@ void loadFile(Graphics& drawer) {
     
     data.open(file);
     
-    if (!data.is_open()) {
-        cerr << "Failed to open file";
-        return;
-    }
     string line;
-    while (getline(data, line)) {
-        if (!line.empty()) {
+    string waste;
+    
+    while (isalpha(data.peek())) {
+        if (!data.fail()) {
             char letter;
             data >> letter;
             if (letter == 'L') {
                 Line l;
                 l.read(data);
                 l.draw(drawer);
+                
             } else if (letter == 'C') {
                 Circle cir;
                 cir.read(data);
                 cir.draw(drawer);
+                
             } else if (letter == 'T') {
                 Triangle t;
                 t.read(data);
                 t.draw(drawer);
+                
             } else if (letter == 'R') {
                 Rectangle r;
                 r.read(data);
                 r.draw(drawer);
+                
             } else {
                 drawer.clear();
                 string remaining;
                 
+                data >> ws;
+                
                 getline(data, remaining);
                 cout << "Error in input file: " << letter << remaining << endl;
             }
+            data >> ws;
         }
     }
     data.close();
@@ -215,15 +191,6 @@ void loadFile(Graphics& drawer) {
     return;
 }
 
-/**
- * Requires: Nothing.
- * Modifies: cin, cout, drawer.
- * Effects:
- *     Read filename from user
- *     concatenate filename with .bmp
- *     Write image to file.
- *     Print "[Wrote filename]"
- */
 void writeFile(const Graphics& drawer) {
     string filename;
     cin >> filename;

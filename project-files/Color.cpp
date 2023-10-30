@@ -8,53 +8,33 @@
  * Mark Zhu, Michael Natchev
  * markzhu, mnatchev
  *
- * <#Description#>
+ * This is the color class.
  *
  */
 
 #include "Color.h"
 
-// TODO: implement first checkRange, then two constructors, setRed, getRed,
-//       setGreen, getGreen, setBlue, getBlue, read, write.
-
-/**
- * Requires: Nothing.
- * Modifies: red, green, blue.
- * Effects:  Default contructor. Sets color to black (0,0,0).
- */
 Color::Color() {
     setRed(0);
     setGreen(0);
     setBlue(0);
 }
 
-/**
- * Requires: Nothing.
- * Modifies: red, green, blue.
- * Effects:  Constructor that sets RGB values. If values are ouside of
- *           [0,255], assigns to the closest of 0 and 255.
- * NOTE: you should implement the 'private' member funtion
- *     checkRange() before you implement this function
- */
 Color::Color(int redVal, int greenVal, int blueVal) {
     setRed(redVal);
     setGreen(greenVal);
     setBlue(blueVal);
 }
 
-/**
- * Requires: Nothing.
- * Modifies: Nothing.
- * Effects:  Returns val if val is in range [0,255],
- *           otherwise returns the closest of 0 and 255.
- */
 int Color::checkRange(int val) {
-    if (val >= 0 && val <= 255) {
+    const int MAX_COLOR_VAL = 255;
+    
+    if (val >= 0 && val <= MAX_COLOR_VAL) {
         return val;
     } else if (val < 0){
         return 0;
     }
-    return 255;
+    return MAX_COLOR_VAL;
 }
 
 void Color::setRed(int redVal) {
@@ -84,13 +64,6 @@ int Color::getBlue() {
     return blue;
 }
 
-/**
- * Requires: ins is in good state.
- * Modifies: ins, red, green, blue.
- * Effects:  Reads color in form red green blue.
- *     format of a color is:  red  green  blue
- *     Example:  100  255  125
- */
 void Color::read(istream& ins) {
     
     int r;
@@ -108,18 +81,12 @@ void Color::read(istream& ins) {
     return;
 }
 
-/**
- * Requires: outs is in good state.
- * Modifies: outs.
- * Effects:  Writes color in form red  green  blue
- * Example:  100  255  125
- */
 void Color::write(ostream& outs) {
-    // fix me
-    outs << checkRange(red) << " " << checkRange(green) << " " << checkRange(blue);
+    outs << checkRange(red) << " " 
+         << checkRange(green) << " " 
+         << checkRange(blue);
     return;
 }
-
 
 // Your code goes above this line.
 // Don't change the implementations below!

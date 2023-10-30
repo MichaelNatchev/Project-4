@@ -8,7 +8,7 @@
  * Michael Natchev, Mark Zhu
  * mnatchev, markzhu
  *
- * Testing from Michael's branch
+ * This is the graphics class.
  */
 
 #include <iostream>
@@ -21,8 +21,6 @@
 #include "bmp.h"
 
 using namespace std;
-
-// TODO: implement constructor, clear, setPixel, initArray.
 
 Graphics::Graphics() {
     for (int y = 0; y < DIMENSION; y++) {
@@ -51,7 +49,6 @@ void Graphics::setPixel(int x, int y, Color color) {
         pixelData[y][x] = color;
     }
 }
-
 
 // Your code goes above this line.
 // Don't change the implementation below!

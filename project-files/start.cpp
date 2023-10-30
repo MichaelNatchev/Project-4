@@ -8,7 +8,7 @@
  * Mark Zhu, Michael Natchev
  * markzhu, mnatchev
  *
- * <#Description#>
+ * Tests code or runs program.
  */
 
 #include <iostream>
